@@ -1,8 +1,10 @@
 /**
- * @file    GPIO.c
- * @brief   GPIO Control Functions
- * @author  Keitetsu
- * @date    2016/09/29
+ * @file        GPIO.c
+ * @brief       GPIO Control Functions
+ * @author      Keitetsu
+ * @date        2016/09/29
+ * @copyright   Copyright (c) 2016 Keitetsu
+ * @license     This software is released under the MIT License.
  */
 
 #include <stdio.h>
