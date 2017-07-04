@@ -9,9 +9,23 @@
 
 #pragma once    // __GPIO_H__
 
-#define BUF_PORT_STR_MAX    4               /*!< GPIOポート番号文字列の最大サイズ */
-#define BUF_PATH_STR_MAX    40              /*!< ファイルパス文字列の最大サイズ */
-#define BUF_VALUE_STR_MAX   2               /*!< GPIO値文字列の最大サイズ */
+/**
+ * @name    バッファサイズ
+ */
+/*! @{ */
+#define BUF_PORT_STR_MAX    4   /*!< GPIOポート番号文字列の最大サイズ */
+#define BUF_PATH_STR_MAX    40  /*!< ファイルパス文字列の最大サイズ */
+#define BUF_VALUE_STR_MAX   2   /*!< GPIO値文字列の最大サイズ */
+/*! @} */
+
+
+/**
+ * @name    GPIOポートの論理
+ */
+/*! @{ */
+#define GPIO_LOW            0   /*!< Low */
+#define GPIO_HIGH           1   /*!< High */
+/*! @} */
 
 
 /**
@@ -22,22 +36,10 @@
  * @brief   GPIOポートの入出力方向
  */
 typedef enum gpio_dir_e {
-    GPIO_INPUT = 0,     /*!< GPIO入力ポート */
-    GPIO_OUTPUT         /*!< GPIO出力ポート */
+    GPIO_INPUT = 0,             /*!< GPIO入力ポート */
+    GPIO_OUTPUT,                /*!< GPIO出力ポート */
+    GPIO_DIR_E_NUM              /*!< GPIO_DIR_Eの列挙数 */
 } GPIO_DIR_E;
-
-
-/**
- * @enum    gpio_value_e
- * @brief   GPIOポートの論理
- *
- * @typedef GPIO_VALUE_E
- * @brief   GPIOポートの論理
- */
-typedef enum gpio_value_e {
-    GPIO_LOW = 0,       /*!< Low */
-    GPIO_HIGH           /*!< High */
-} GPIO_VALUE_E;
 
 
 /**
@@ -48,8 +50,8 @@ typedef enum gpio_value_e {
  * @brief   GPIOポートの情報
  */
 typedef struct gpio_t {
-    int port;           /*!< GPIOポート番号 */
-    int direction;      /*!< GPIOポートの入出力方向 */
+    int port;                   /*!< GPIOポート番号 */
+    GPIO_DIR_E direction;       /*!< GPIOポートの入出力方向 */
 } GPIO_T;
 
 
