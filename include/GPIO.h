@@ -9,6 +9,7 @@
 
 #pragma once    // __GPIO_H__
 
+
 /**
  * @name    バッファサイズ
  */
@@ -55,66 +56,66 @@ typedef struct gpio_t {
 } GPIO_T;
 
 
-// プロトタイプ宣言
 /**
  * @brief   Export GPIO Port
- * @param[in]       target      GPIO Port Information
- * @retval          0           Success
- * @retval          1           Failure
+ * @param[in]       target          GPIO Port Information
+ * @retval          0               Success
+ * @retval          -1              Failure
  */
 int gpio_export(GPIO_T *target);
 
 
 /**
  * @brief   Unexport GPIO Port
- * @param[in]       target      GPIO Port Information
- * @retval          0           Success
- * @retval          1           Failure
+ * @param[in]       target          GPIO Port Information
+ * @retval          0               Success
+ * @retval          -1              Failure
  */
 int gpio_unexport(GPIO_T *target);
 
 
 /**
  * @brief   Set GPIO Direction
- * @param[in]       target      GPIO Port Information
- * @retval          0           Success
- * @retval          1           Failure
+ * @param[in]       target          GPIO Port Information
+ * @retval          0               Success
+ * @retval          -1              Failure
  */
 int gpio_set_direction(GPIO_T *target);
 
 
 /**
  * @brief   Open GPIO Port (Export GPIO Port, and Set GPIO Direction)
- * @param[in]       target      GPIO Port Information
- * @retval          0           Success
- * @retval          1           Failure
+ * @param[in]       target          GPIO Port Information
+ * @retval          0               Success
+ * @retval          -1              Failure
  */
 int gpio_open(GPIO_T *target);
 
 
 /**
  * @brief   Close GPIO (Unexport GPIO)
- * @param[in]       target      GPIO Port Information
- * @retval          0           Success
- * @retval          1           Failure
+ * @param[in]       target          GPIO Port Information
+ * @retval          0               Success
+ * @retval          -1              Failure
  */
 int gpio_close(GPIO_T *target);
 
 
 /**
  * @brief   Read Value from GPIO Port
- * @param[in]       target      GPIO Port Information
- * @return          Read Value from GPIO Port
+ * @param[in]       target          GPIO Port Information
+ * @retval          -1              Failure
+ * @retval          Other Values    Read Value from GPIO Port
  */
 int gpio_read(GPIO_T *target);
 
 
 /**
  * @brief   Write Value to GPIO Port
- * @param[in]       target      GPIO Port Information
- * @param[in]       value       Write Value for GPIO Port
- * @retval          0           Success
- * @retval          1           Failure
+ * @param[in]       target          GPIO Port Information
+ * @param[in]       value           Write Value for GPIO Port
+ * @retval          0               Success
+ * @retval          -1              Failure
  */
 int gpio_write(GPIO_T *target, int value);
 
